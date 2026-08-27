@@ -1,33 +1,428 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #151515;
+            color: white;
+        }
+
+        /* Navigation */
+        nav {
+            height: 70px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #d000ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #d000ff;
+        }
+
+        /* Home */
+        .home {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 8%;
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1100px;
+            gap: 60px;
+        }
+
+        .text {
+            flex: 1;
+        }
+
+        .text h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .text h1 {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .text h2 {
+            font-size: 30px;
+        }
+
+        .text h2 span {
+            color: #d000ff;
+        }
+
+        .text p {
+            margin-top: 25px;
+            line-height: 1.7;
+            color: #ccc;
+            max-width: 600px;
+        }
+
+        /* Profile Image */
+        .profile {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            border: 5px solid #d000ff;
+            padding: 8px;
+            box-shadow:
+                0 0 20px #d000ff,
+                0 0 50px #8a00a8,
+                0 0 90px #4d005c;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 28px;
+            background: #d000ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #a000c5;
+            box-shadow: 0 0 20px #d000ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .title span {
+            color: #d000ff;
+        }
+
+        .about {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
+            background: #222;
+            padding: 20px 35px;
+            border-radius: 10px;
+            border: 1px solid #444;
+        }
+
+        .skill:hover {
+            border-color: #d000ff;
+            box-shadow: 0 0 15px #d000ff;
+        }
+
+        /* Projects */
+        .projects {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .project {
+            width: 280px;
+            background: #222;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .project h3 {
+            color: #d000ff;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 15px;
+            color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #222;
+            color: #aaa;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .home {
+                padding-top: 50px;
+            }
+
+            .home-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .profile {
+                width: 280px;
+                height: 280px;
+            }
+
+            .text h1 {
+                font-size: 45px;
+            }
+
+            .text h2 {
+                font-size: 24px;
+            }
+
+            .text h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>My Portfolio</h1>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <span>My</span> Portfolio
+        </div>
 
-    <h2>About Me</h2>
-    <p>Hello! My name is Venkata Lakshmi.</p>
-    <p>I am a student interested in Web Development and Python.</p>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <h2>Education</h2>
-    <p>MCA - Computer Applications</p>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Python</li>
-    </ul>
+    <!-- Home -->
+    <section class="home" id="home">
 
-    <h2>Project</h2>
-    <ul>
-        <li>Student Management System</li>
-    </ul>
+        <div class="home-content">
 
-    <h2>Contact</h2>
-    <p>Email: venkatalakshmitorlikonda@gmail.com</p>
+            <div class="text">
+
+                <h3>Hello, I'm</h3>
+
+                <h1>Venkata Lakshmi</h1>
+
+                <h2>
+                    And I'm a <span>MCA Student</span>
+                </h2>
+
+                <p>
+                   Hi! I'm Venkatalakshmi, an MCA student passionate about
+    web development and creating modern, responsive websites.
+                </p>
+
+                <a href="#projects" class="btn">
+                    View My Work
+                </a>
+
+            </div>
+
+
+            <div class="profile">
+
+                <!-- Change profile.jpg to your photo -->
+                <img src="profile.jpg" alt="Profile Photo">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+        <h2 class="title">
+            About <span>Me</span>
+        </h2>
+
+        <p class="about">
+            I am a creative web designer interested in developing
+            modern and responsive websites. I enjoy learning new
+            technologies and creating attractive web experiences.
+        </p>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2 class="title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Python</div>
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2 class="title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects">
+            <div class="project">
+                <h3>Student Management</h3>
+                <p>
+                    A simple student management project
+                    for managing student information.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Web Design</h3>
+                <p>
+                    A modern responsive web page designed
+                    using HTML, CSS and JavaScript.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2 class="title">
+            Contact <span>Me</span>
+        </h2>
+
+        <div class="contact">
+
+            <p>📧 Email: venkatalakshmitorlikonda@gmail.com</p>
+
+            <p>📱 Phone: +91 80192 44135</p>
+
+            <p>📍 India</p>
+
+            <a href="mailto:venkatalakshmitorlikonda@gmail.com" class="btn">
+                Contact Me
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 My Portfolio | All Rights Reserved
+        </p>
+
+    </footer>
 
 </body>
 </html>
