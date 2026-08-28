@@ -23,7 +23,8 @@
             color: white;
         }
 
-        /* Navigation */
+        /* ================= NAVIGATION ================= */
+
         nav {
             height: 70px;
             background: #222;
@@ -44,44 +45,58 @@
         .logo span {
             color: #d000ff;
         }
-       nav ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 0;
-}
 
-nav ul li:not(:last-child)::after {
-    content: "|";
-    color: #888;
-    margin-left: 20px;
-    margin-right: 20px;
-}
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 0;
+        }
+
+        /* Separator between menu items */
+        nav ul li:not(:last-child)::after {
+            content: "|";
+            color: #888;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
 
         nav ul li a:hover {
             color: #d000ff;
         }
 
-        /* Home */
+
+        /* ================= HOME ================= */
+
         .home {
             min-height: 90vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             padding: 60px 8%;
+            text-align: center;
         }
 
+        /* Center Home content */
         .home-content {
+            width: 100%;
+            max-width: 900px;
+
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1100px;
-            gap: 60px;
+            justify-content: center;
         }
 
         .text {
-            flex: 1;
+            width: 100%;
         }
 
         .text h3 {
@@ -103,42 +118,28 @@ nav ul li:not(:last-child)::after {
         }
 
         .text p {
-            margin-top: 25px;
+            margin: 25px auto 0;
             line-height: 1.7;
             color: #ccc;
-            max-width: 600px;
+            max-width: 700px;
         }
 
-        /* Profile Image */
-        .profile {
-            width: 360px;
-            height: 360px;
-            border-radius: 50%;
-            border: 5px solid #d000ff;
-            padding: 8px;
-            box-shadow:
-                0 0 20px #d000ff,
-                0 0 50px #8a00a8,
-                0 0 90px #4d005c;
-        }
 
-        .profile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
+        /* ================= BUTTON ================= */
 
-        /* Button */
         .btn {
             display: inline-block;
             margin-top: 30px;
             padding: 12px 28px;
+
             background: #d000ff;
             color: white;
+
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
+
+            transition: 0.3s;
         }
 
         .btn:hover {
@@ -146,7 +147,9 @@ nav ul li:not(:last-child)::after {
             box-shadow: 0 0 20px #d000ff;
         }
 
-        /* Sections */
+
+        /* ================= SECTIONS ================= */
+
         section {
             padding: 80px 8%;
         }
@@ -161,15 +164,21 @@ nav ul li:not(:last-child)::after {
             color: #d000ff;
         }
 
+
+        /* ================= ABOUT ================= */
+
         .about {
             text-align: center;
             max-width: 800px;
             margin: auto;
+
             color: #ccc;
             line-height: 1.8;
         }
 
-        /* Skills */
+
+        /* ================= SKILLS ================= */
+
         .skills-container {
             display: flex;
             justify-content: center;
@@ -180,8 +189,11 @@ nav ul li:not(:last-child)::after {
         .skill {
             background: #222;
             padding: 20px 35px;
+
             border-radius: 10px;
             border: 1px solid #444;
+
+            transition: 0.3s;
         }
 
         .skill:hover {
@@ -189,18 +201,24 @@ nav ul li:not(:last-child)::after {
             box-shadow: 0 0 15px #d000ff;
         }
 
-        /* Projects */
+
+        /* ================= PROJECTS ================= */
+
         .projects {
             display: flex;
             justify-content: center;
+            align-items: center;
+
             flex-wrap: wrap;
             gap: 25px;
         }
 
         .project {
             width: 280px;
+
             background: #222;
             padding: 25px;
+
             border-radius: 15px;
             text-align: center;
         }
@@ -215,7 +233,13 @@ nav ul li:not(:last-child)::after {
             line-height: 1.6;
         }
 
-        /* Contact */
+        .project .btn {
+            margin-top: 20px;
+        }
+
+
+        /* ================= CONTACT ================= */
+
         .contact {
             text-align: center;
         }
@@ -225,15 +249,20 @@ nav ul li:not(:last-child)::after {
             color: #ccc;
         }
 
-        /* Footer */
+
+        /* ================= FOOTER ================= */
+
         footer {
             text-align: center;
             padding: 25px;
+
             background: #222;
             color: #aaa;
         }
 
-        /* Mobile */
+
+        /* ================= MOBILE ================= */
+
         @media (max-width: 768px) {
 
             nav {
@@ -245,17 +274,8 @@ nav ul li:not(:last-child)::after {
             }
 
             .home {
-                padding-top: 50px;
-            }
-
-            .home-content {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-
-            .profile {
-                width: 280px;
-                height: 280px;
+                min-height: 85vh;
+                padding: 50px 5%;
             }
 
             .text h1 {
@@ -269,68 +289,95 @@ nav ul li:not(:last-child)::after {
             .text h3 {
                 font-size: 24px;
             }
+
+            .text p {
+                font-size: 15px;
+            }
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
+
+    <!-- ================= NAVIGATION ================= -->
+
     <nav>
+
         <div class="logo">
             <span>My</span> Portfolio
         </div>
 
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
+
     </nav>
 
 
-    <!-- Home -->
+    <!-- ================= HOME ================= -->
+
     <section class="home" id="home">
 
-    <div class="home-content">
+        <div class="home-content">
 
-        <div class="text">
+            <div class="text">
 
-            <h3>Hello, I'm</h3>
+                <h3>Hello, I'm</h3>
 
-            <h1>Venkata Lakshmi</h1>
+                <h1>Venkata Lakshmi</h1>
 
-            <h2>
-                And I'm a <span>MCA Student</span>
-            </h2>
+                <h2>
+                    And I'm a
+                    <span>MCA Student</span>
+                </h2>
 
-            <p>
-                Hi! I'm Venkatalakshmi, an MCA student passionate about
-                web development and creating modern, responsive websites.
-            </p>
+                <p>
+                    Hi! I'm Venkatalakshmi, an MCA student passionate about
+                    web development and creating modern, responsive websites.
+                </p>
 
-            <!-- GitHub Button -->
-            <a href="https://github.com/lakshmirvr/student-management"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn">
-                View My Work
-            </a>
+                <!-- GitHub Button -->
+
+                <a href="https://github.com/lakshmirvr/student-management"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn">
+
+                    View My Work
+
+                </a>
+
+            </div>
 
         </div>
 
-        <div class="profile">
-            <img src="profile.jpg" alt="Venkata Lakshmi">
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
 
-    <!-- About -->
+    <!-- ================= ABOUT ================= -->
+
     <section id="about">
 
         <h2 class="title">
@@ -338,12 +385,17 @@ nav ul li:not(:last-child)::after {
         </h2>
 
         <p class="about">
-            Creative web designer skilled in HTML, CSS, and Python, focused on building modern and responsive web experiences.
+
+            Creative web designer skilled in HTML, CSS, and Python,
+            focused on building modern and responsive web experiences.
+
         </p>
 
     </section>
-    
-<!-- Skills -->
+
+
+    <!-- ================= SKILLS ================= -->
+
     <section id="skills">
 
         <h2 class="title">
@@ -352,45 +404,62 @@ nav ul li:not(:last-child)::after {
 
         <div class="skills-container">
 
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">Python</div>
-        </div>
- </section>
+            <div class="skill">
+                HTML
+            </div>
 
-<!-- Projects -->
-<!-- Projects -->
-<section id="projects">
+            <div class="skill">
+                CSS
+            </div>
 
-    <h2 class="title">
-        My <span>Project</span>
-    </h2>
-
-    <div class="projects">
-
-        <div class="project">
-
-            <h3>Student Management</h3>
-
-            <p>
-                A simple student management project
-                for managing student information.
-            </p>
-
-            <a href="https://github.com/lakshmirvr/student-management"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn">
-                View on GitHub
-            </a>
+            <div class="skill">
+                Python
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
-<!-- Contact -->
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="title">
+            My <span>Project</span>
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>
+                    Student Management
+                </h3>
+
+                <p>
+                    A simple student management project
+                    for managing student information.
+                </p>
+
+                <a href="https://github.com/lakshmirvr/student-management"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn">
+
+                    View on GitHub
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
     <section id="contact">
 
         <h2 class="title">
@@ -399,14 +468,25 @@ nav ul li:not(:last-child)::after {
 
         <div class="contact">
 
-            <p>📧 Email: venkatalakshmitorlikonda@gmail.com</p>
+            <p>
+                📧 Email:
+                venkatalakshmitorlikonda@gmail.com
+            </p>
 
-            <p>📱 Phone: +91 80192 44135</p>
+            <p>
+                📱 Phone:
+                +91 80192 44135
+            </p>
 
-            <p>📍 India</p>
+            <p>
+                📍 India
+            </p>
 
-            <a href="mailto:venkatalakshmitorlikonda@gmail.com" class="btn">
+            <a href="mailto:venkatalakshmitorlikonda@gmail.com"
+               class="btn">
+
                 Contact Me
+
             </a>
 
         </div>
@@ -414,7 +494,8 @@ nav ul li:not(:last-child)::after {
     </section>
 
 
-    <!-- Footer -->
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
         <p>
